@@ -31,7 +31,7 @@ http://localhost:8100/currency-conversion-feign/from/USD/to/BDT/quantity/10
 ```
 
 ###  Name Server
-Nameing server is created using netflix-eureka-server. Currency Exchange Service and Currency Conversion Service register them to Naming Server as eureka-client. 
+Naming server is created using netflix-eureka-server. Currency Exchange Service and Currency Conversion Service register them to Naming Server as eureka-client. 
 
 Using `feign client` currency conversion service calls currency exchange service. 
 
