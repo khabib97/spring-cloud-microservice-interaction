@@ -10,6 +10,19 @@ Four submodules:
 
 ![Desing Overview](https://raw.githubusercontent.com/khabib97/spring-cloud-microservice-interaction/master/overview.png)
 
+# Project setup
+
+- Download this repository 
+```
+git clone --recursive https://github.com/khabib97/spring-cloud-microservice-interaction.git
+```
+- Make submodules to track their respective remote branches (instead of being in detached HEAD state):
+```
+git submodule foreach -q --recursive 'git checkout $(git config -f $toplevel/.gitmodules submodule.$name.branch || echo master)'
+```
+
+---
+
 ### Currency Exchange Service
 Currency Exchange Service convert one currency to another currency. Conversion rates are stored in H2 database.
 - Clone currency-exchange-service repo
