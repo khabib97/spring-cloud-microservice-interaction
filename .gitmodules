@@ -1,0 +1,12 @@
+[submodule "currency-exchange-service"]
+	path = currency-exchange-service
+	url = https://github.com/khabib97/currency-exchange-service.git
+[submodule "currency-conversion-service"]
+	path = currency-conversion-service
+	url = https://github.com/khabib97/currency-conversion-service.git
+[submodule "naming-server"]
+	path = naming-server
+	url = https://github.com/khabib97/naming-server.git
+[submodule "api-gateway"]
+	path = api-gateway
+	url = https://github.com/khabib97/api-gateway.git
