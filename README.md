@@ -82,7 +82,7 @@ Now we move to docker. Modifying our repositories so that we can run our service
 ### How to a create docker image?
 
 - In very sub-module, just add the below configuration in `pom.xml` file, inside `build.plugins.plugin` block:
-```
+```xml
 <configuration>
 	<image>
 		<name>khabib97/${project.artifactId}:${project.version}</name>
