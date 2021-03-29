@@ -73,6 +73,59 @@ Here we can convert modify our uri, implement authentication...
 - Import as maven porject
 - And run as java application
 
+# Docker Version
+
+Now we move to docker. Modifying our repositories so that we can run our services as containers.
+
+*For non docker version, after downloading set head to `v1.0-non.dockerized` tag*
+
+### How to a create docker image?
+
+- In very sub-module, just add the below configuration in `pom.xml` file, inside `build.plugins.plugin` block:
+```
+<configuration>
+	<image>
+		<name>khabib97/${project.artifactId}:${project.version}</name>
+	</image>
+	<pullPolicy>IF_NOT_PRESENT</pullPolicy>
+</configuration>
+```
+- Then from eclipse, `right click projct` >>  `run as` >>  `maven build...` >> in `Main` tab's `Goals` >> add `spring-boot:build-image -DskipTests` [skipTests is not a good practice but for quicker image creating] >> `run`
+
+It will create your docker image for that submodule. Create all submodule.
+
+### Zipkin and Rabbit MQ
+- Zipkin is used for Distributed Tracing
+- Incase of zipkin failure, rabbit mq is used for queueing
+
+### 10000 feet architectural overview: 
+
+![Final Design Overview](https://raw.githubusercontent.com/khabib97/spring-cloud-microservice-interaction/master/overview-zipkin-rabbitmq.png)
+
+### Run 
+
+- After creating all images for the sub modules, run the docker-compose.yaml file,
+```
+$docker-compose up
+```
+- It will up and run all containers(magic)
+- All previous url will be similar in that case.
+- *Zipkins* URL: http://127.0.0.1:9411/
+- *Rabbit MQ* URL: http://127.0.0.1:15672/
+
+**Special thanks to *[Ranga Rao Karanam](https://www.linkedin.com/in/rangakaranam/)* for his tutorials**  
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
