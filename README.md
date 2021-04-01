@@ -1,6 +1,8 @@
 # spring-cloud-microservice-interaction
 
-This repo contains four project. Mainly these repos are created for demonstrating, how do different microservices communicate with each other. 
+This repo contains four project. 
+
+Mainly these repos are created for demonstrating - "How do different microservices communicate with each other". Also, attempts have been made to introduce Spring boot and Docker..  
 
 Four submodules:
 1. currency-exchange-service 
