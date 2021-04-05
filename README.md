@@ -113,6 +113,30 @@ $docker-compose up
 - *Zipkins* URL: http://127.0.0.1:9411/
 - *Rabbit MQ* URL: http://127.0.0.1:15672/
 
+# Kubernetes Version
+
+Here we modify `currency-exchange-service` and `currency-conversion-service` in such a way, so that we can run it on kubernetes (Here Google Kubernetes Engine).
+
+
+To get kubernetes version, checkout to `kubernetes` branch of these two repositories. 
+
+- We remove cloud-starter-config, eureka, zipkin, redis from pom.xml
+- Then create image and upload image to `dockerhub`
+- Create cluster in GKE
+- Connect it to `cloud console`
+```
+$kubectl create deployment currency-exchange --image=khabib97/currency-exchange-service:0.0.2-SNAPSH
+
+$kubctl expose deployment currency-exchange
+
+$kubectl create deployment currency-conversion --image=khabib97/currency-conversion-service:0.0.2-SNAPSH
+
+$kubctl expose deployment currency-conversion
+```
+
+- Then go url and enjoy.
+
+---
 **Special thanks to *[Ranga Rao Karanam](https://www.linkedin.com/in/rangakaranam/)* for his tutorials**  
 
 
