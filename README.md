@@ -1,6 +1,8 @@
 # spring-cloud-microservice-interaction
 
-This repo contains four project. Mainly these repos are created for demonstrating, how do different microservices communicate with each other. 
+This repo contains four project. 
+
+Mainly these repos are created for demonstrating - "How do different microservices communicate with each other". Also, attempts have been made to introduce Spring boot and Docker..  
 
 Four submodules:
 1. currency-exchange-service 
@@ -82,7 +84,7 @@ Now we move to docker. Modifying our repositories so that we can run our service
 ### How to a create docker image?
 
 - In very sub-module, just add the below configuration in `pom.xml` file, inside `build.plugins.plugin` block:
-```
+```xml
 <configuration>
 	<image>
 		<name>khabib97/${project.artifactId}:${project.version}</name>
