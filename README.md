@@ -135,8 +135,18 @@ $kubectl create deployment currency-conversion --image=khabib97/currency-convers
 
 $kubctl expose deployment currency-conversion
 ```
-
 - Then go url and enjoy.
+
+### Try Local Kubernetes 
+
+- Enable kunernetes from Docker application
+- Then use above command.
+- You can modify deployment.yaml and customized it
+- Using declarative approach by modifing deployment.yaml. you can replicate multiple deployment instances 
+```
+$ kubectl get deployment currency-exchange -o yaml >> deployment.yaml
+$ kubectl apply -f deployment.yaml 
+```
 
 ---
 **Special thanks to *[Ranga Rao Karanam](https://www.linkedin.com/in/rangakaranam/)* for his tutorials**  
